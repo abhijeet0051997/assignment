@@ -118,26 +118,26 @@ fn--;
  }
 }
 }
-for(i=1;i<=fn1;i++)
+for(i=0;i<fn1;i++)
 {
- ftat[i]=fwt[i]+fbt[i];
- ftwt=ftwt+fwt[i];
- fttat=fttat+ftat[i];
+ ftat[i+1]=fwt[i+1]+fbt[i+1];
+ ftwt=ftwt+fwt[i+1];
+ fttat=fttat+ftat[i+1];
 }
-for(i=1;i<=fn1;i++)
+for(i=0;i<fn1;i++)
 {
-	tt=tt+ftat[i];
+	tt=tt+ftat[i+1];
 }
-for(i=1;i<=sn1;i++)
+for(i=0;i<sn1;i++)
 {
-	tt=tt+stat[i];
+	tt=tt+stat[i+1];
 }
 fatat=fttat/fn1;
 printf("-----------------------------------------FACULTY QUERIES --------------------------------------------------- \n");
 printf("\n\n query \t query ID \t BurstTime \t Waiting Time \t TurnaroundTime \n ");
-for(i=1;i<=sn1;i++)
+for(i=0;i<sn1;i++)
 {
- printf("\n %5d \t %5d \t\t %5d \t\t %5d \t\t %5d \n", i,fpid[i],fbt[i],fwt[i],ftat[i]);
+ printf("\n %5d \t %5d \t\t %5d \t\t %5d \t\t %5d \n", i+1,fpid[i+1],fbt[i+1],fwt[i+1],ftat[i+1]);
 }
 printf("\n The amount of time spent on queries %f",tt);
 printf("\n The average Turn around %f",satat+fatat);
